@@ -39,6 +39,7 @@ dependencies:
   shared_preferences:
   get:
   email_validator:
+  lottie:
 
 
 dev_dependencies:

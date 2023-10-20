@@ -6,6 +6,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_rx/src/rx_types/rx_types.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 import 'package:task10/UI/dashboard.dart';
+import 'package:task10/Utils/colors.dart';
 
 import '../utils/SHDFClass.dart';
 import '../utils/constants.dart';
@@ -31,9 +32,22 @@ class LoginController extends GetxController {
       showDialog(
           context: context,
           builder: (BuildContext context1) => AlertDialog(
-            actions: [Image.asset("assets/images/background.jpg")],
+            actions: [
+              Column(
+                children: [
+                  Image.asset("assets/images/warning.jpg"),
+                ],
+              )
+              
+            ],
+
+            backgroundColor: Appcolor.containercolor,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(25)
+            ),
+            // actions: [Image.asset("assets/images/background.jpg")],
           ));
-    } else if (EmailValidator.validate(txtEmail.text)) {
+    } else if (!EmailValidator.validate(txtEmail.text)) {
       showDialog(
           context:context,
           builder: (BuildContext context1) => AlertDialog(
